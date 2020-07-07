@@ -226,7 +226,7 @@ input[type="submit"]:focus { outline: 0; background-color: #222; }
 /* Placeholder color */
 ::-webkit-input-placeholder { color: #999; }
 :-moz-placeholder { color: #999; }
-::-moz-placeholder { color: #999; opacity: 1; }/* Since FF19 lowers the opacity of the placeholder by default */ }
+::-moz-placeholder { color: #999; opacity: 1; }/* Since FF19 lowers the opacity of the placeholder by default */ 
 :-ms-input-placeholder { color: #999; }
 
 /* Links */
@@ -571,7 +571,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Header Fixed */
 #site-header.is-fixed { position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; }
-#site-header.is-fixed.is-small .wrap-inner { padding-top: 20px; padding-bottom: 20px; }
+/*#site-header.is-fixed.is-small .wrap-inner { padding-top: 20px; padding-bottom: 20px; }*/
+#site-header.is-fixed.is-small .wrap-inner { padding-top: 7px; padding-bottom: 7px; }
 #site-header.is-fixed.is-small .header-search-icon,
 #site-header.is-fixed.is-small .nav-top-cart-wrapper .nav-cart-trigger,
 #site-header.is-fixed.is-small #main-nav > ul > li > a { line-height: 76px; }
@@ -586,7 +587,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .header-style-2 #site-header #main-nav { position: absolute; right: 0px; top: 50%; z-index: 99; -webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);-o-transform: translateY(-50%);transform: translateY(-50%); }
 .header-style-2.menu-has-search #site-header #main-nav { right: 44px; }
 .header-style-2 #site-logo {margin-left: 6px; }
-.header-style-2 #site-header .wrap-inner { padding-top: 31px; padding-bottom: 30px; }
+/*.header-style-2 #site-header .wrap-inner { padding-top: 31px; padding-bottom: 30px; }*/
+.header-style-2 #site-header .wrap-inner { padding-top: 7px; padding-bottom: 7px; }
 .header-style-2 #main-nav > ul > li > a,
 .header-style-2 #site-header .header-search-icon { line-height: 101px; }
 

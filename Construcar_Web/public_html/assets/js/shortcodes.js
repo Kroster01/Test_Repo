@@ -287,16 +287,16 @@
     var googleMap = function () {
         // gmap default
         if ($().gmap3) {
-            var data = JSON.parse('[{"address":"Westwell Leacon, Ashford, Vương Quốc Anh","content":""}]');
+            var data = JSON.parse('[{"address":"LOTEO SANTA INES,LOTE 3 BOTROLHUE","content":""}]');
             $(".themesflat-map")
                 .gmap3({
                     map: {
                         options: {
                             zoom: 10,
-                            center: [51.1946026,0.8140602,14.5],
-                            mapTypeId: 'Autora',
+                            center: [-38.7369418,-72.6568755],
+                            mapTypeId: 'ConstruCar',
                             mapTypeControlOptions: {
-                                mapTypeIds: ['Autora', google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.HYBRID]
+                                mapTypeIds: ['ConstruCar', google.maps.MapTypeId.SATELLITE, google.maps.MapTypeId.HYBRID]
                             },
                             scrollwheel: true
                         },
@@ -317,9 +317,9 @@
                         }]
                 },
                 styledmaptype: {
-                    id: "Autora",
+                    id: "ConstruCar",
                     options: {
-                        name: "Autora"
+                        name: "ConstruCar"
                     },
                     styles: [
                         {

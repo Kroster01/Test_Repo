@@ -224,10 +224,10 @@
                         success: function( msg ) {
                             var result, cls;                            
                             if ( msg === 'Success' ) {                                
-                                result = 'Message Sent Successfully To Email Administrator. ( You can change the email management a very easy way to get the message of customers in the user manual )';
+                                result = 'Mensaje enviado con éxito al administrador de correo electrónico. (Puede cambiar la administración del correo electrónico de una manera muy fácil para obtener el mensaje de los clientes en el manual del usuario)';
                                 cls = 'msg-success';
                             } else {
-                                result = 'Error sending email.';
+                                result = 'Error al enviar correo electrónico.';
                                 cls = 'msg-error';
                             }
 
@@ -258,8 +258,8 @@
             subscribeMsg      : $('#subscribe-msg'),
             subscribeContent  : $("#subscribe-content"),
             dataMailchimp     : $('#subscribe-form').attr('data-mailchimp'),
-            success_message   : '<div class="notification_ok">Thank you for joining our mailing list! Please check your email for a confirmation link.</div>',
-            failure_message   : '<div class="notification_error">Error! <strong>There was a problem processing your submission.</strong></div>',
+            success_message   : '<div class="notification_ok">Gracias por unirte a nuestra lista de correo! Por favor revise su correo electrónico para un enlace de confirmación.</div>',
+            failure_message   : '<div class="notification_error">Error! <strong>Hubo un problema al procesar su envío.</strong></div>',
             noticeError       : '<div class="notification_error">{msg}</div>',
             noticeInfo        : '<div class="notification_error">{msg}</div>',
             basicAction       : 'mail/subscribe.php',
@@ -300,19 +300,19 @@
                     } else {
                         switch (responseData.msg) {
                             case "email-required":
-                                messageDiv.html(objUse.noticeError.replace('{msg}','Error! <strong>Email is required.</strong>'));
+                                messageDiv.html(objUse.noticeError.replace('{msg}','Error! <strong>correo electronico es requerido.</strong>'));
                                 break;
                             case "email-err":
-                                messageDiv.html(objUse.noticeError.replace('{msg}','Error! <strong>Email invalid.</strong>'));
+                                messageDiv.html(objUse.noticeError.replace('{msg}','Error! <strong>Email inválido.</strong>'));
                                 break;
                             case "duplicate":
-                                messageDiv.html(objUse.noticeError.replace('{msg}','Error! <strong>Email is duplicate.</strong>'));
+                                messageDiv.html(objUse.noticeError.replace('{msg}','Error! <strong>El correo electrónico está duplicado.</strong>'));
                                 break;
                             case "filewrite":
-                                messageDiv.html(objUse.noticeInfo.replace('{msg}','Error! <strong>Mail list file is open.</strong>'));
+                                messageDiv.html(objUse.noticeInfo.replace('{msg}','Error! <strong>El archivo de la lista de correo está abierto.</strong>'));
                                 break;
                             case "undefined":
-                                messageDiv.html(objUse.noticeInfo.replace('{msg}','Error! <strong>undefined error.</strong>'));
+                                messageDiv.html(objUse.noticeInfo.replace('{msg}','Error! <strong>error indefinido.</strong>'));
                                 break;
                             case "api-error":
                                 objUse.subscribeContent.fadeOut(500, function () {
