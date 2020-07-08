@@ -223,8 +223,6 @@
                         },
                         success: function( msg ) {
                             var result, cls;
-                            debugger;  
-                            msg = 'Mantencion';                
                             if ( msg === 'Success' ) {                                
                                 result = 'Mensaje enviado con éxito al administrador de correo electrónico. (Puede cambiar la administración del correo electrónico de una manera muy fácil para obtener el mensaje de los clientes en el manual del usuario)';
                                 cls = 'msg-success';
