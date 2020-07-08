@@ -242,6 +242,9 @@
 
                             $form.find(':input').not('.submit').val('');
                         },
+                        error: function(jqXHR, XMLHttpRequest, textStatus, errorThrown) {
+                            // TODO: en caod e erro no espera definir validación
+                        },
                         complete: function (xhr, status, error_thrown) {
                             $form.find('.loading').remove();
                         }
