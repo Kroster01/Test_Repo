@@ -226,6 +226,9 @@
                             if ( msg === 'Success' ) {                                
                                 result = 'Mensaje enviado con éxito al administrador de correo electrónico. (Puede cambiar la administración del correo electrónico de una manera muy fácil para obtener el mensaje de los clientes en el manual del usuario)';
                                 cls = 'msg-success';
+                            } else if(msg === 'Mantencion') {
+                                result = 'El correo electrónico no ha sido enviado por mantención .';
+                                cls = 'msg-success';
                             } else {
                                 result = 'Error al enviar correo electrónico.';
                                 cls = 'msg-error';
