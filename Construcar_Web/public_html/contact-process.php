@@ -39,7 +39,7 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
                                         <tr style='font-size:14px; color:#444444'>
                                             <td valign='bottom' style='padding:5px'>
                                                 <span style='margin-top: 10px; margin-bottom: 17px; font-weight: normal; font-family: Tahoma, &quot;Open Sans&quot;, sans-serif, serif, EmojiFont;'>
-                                                    Estimado (a) Construcar:<br>Te enviamos el detalle de la solicitud realizada.<br>Con fecha ".date('d-m-Y H:i:s').":
+                                                    Estimada(o) Construcar:<br>Te enviamos el detalle de la solicitud realizada.<br>Con fecha ".date('d-m-Y H:i:s').":
                                                 </span>
                                             </td>
                                             <td align='right' valign='bottom' nowrap='' style='padding:5px'></td>
