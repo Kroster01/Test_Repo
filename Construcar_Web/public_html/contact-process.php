@@ -23,9 +23,9 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
         </head>
         <body>
             <div align='center'>
-                <table width='714' border='0' cellpadding='0' cellspacing='0' style='border-collapse:collapse; background-color:#F5F5F5; font-family:'>
+                <table width='714' border='0' cellpadding='0' cellspacing='0' style='border-collapse:collapse; background-color:#F5F5F5;'>
                     <tbody>
-                        <tr height='30' style='background-color:#FF1300'>
+                        <tr height='30' style='background-color:rgba(191,255,82,0.74);'>
                             <td width='80'></td>
                             <td colspan='3'><img></td>
                             <td width='80'></td>
@@ -133,7 +133,7 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
                             <td width='20' style='background-color:#ffffff'></td>
                             <td></td>
                         </tr>
-                        <tr height='30' style='background-color:#FF1300'>
+                        <tr height='30' style='background-color:rgba(191,255,82,0.74);'>
                             <td width='80'></td>
                             <td colspan='3'><img></td>
                             <td width='80'></td>

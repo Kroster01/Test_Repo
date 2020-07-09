@@ -224,7 +224,7 @@
                         success: function( msg ) {
                             var result, cls;
                             if ( msg === 'Success' ) {                                
-                                result = 'Mensaje enviado con éxito al administrador de correo electrónico. (Puede cambiar la administración del correo electrónico de una manera muy fácil para obtener el mensaje de los clientes en el manual del usuario)';
+                                result = 'Mensaje enviado con éxito al administrador de correo electrónico.';
                                 cls = 'msg-success';
                             } else {
                                 result = 'Error al enviar correo electrónico.';
