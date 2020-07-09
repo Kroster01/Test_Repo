@@ -8,7 +8,7 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
     isset($_POST['message']) && !empty($_POST['name'])) {
 
     $to = "pruebas@construcar.cl";
-    $subject = 'Contacto desde la Web - '.utf8_decode($_POST['subject']).' - '.date("d-m-Y H/i/s");
+    $subject = 'Contacto desde la Web - '.date("d-m-Y H:i:s");
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= "From:"."construcar";
@@ -39,7 +39,7 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
                                         <tr style='font-size:14px; color:#444444'>
                                             <td valign='bottom' style='padding:5px'>
                                                 <span style='margin-top: 10px; margin-bottom: 17px; font-weight: normal; font-family: Tahoma, &quot;Open Sans&quot;, sans-serif, serif, EmojiFont;'>
-                                                    Estimado (a) Puerto Falucho:<br>Te enviamos el detalle de la solicitud realizada.<br>Con fecha <?php echo date('d-m-Y H/i/s');?>:
+                                                    Estimado (a) Construcar:<br>Te enviamos el detalle de la solicitud realizada.<br>Con fecha ".date('d-m-Y H:i:s').":
                                                 </span>
                                             </td>
                                             <td align='right' valign='bottom' nowrap='' style='padding:5px'></td>
