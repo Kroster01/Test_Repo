@@ -25,9 +25,11 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
             <div align='center'>
                 <table width='714' border='0' cellpadding='0' cellspacing='0' style='border-collapse:collapse; background-color:#F5F5F5;'>
                     <tbody>
-                        <tr height='30' style='background-color:rgba(191,255,82,0.74);'>
+                        <tr height='100'>
                             <td width='80'></td>
-                            <td colspan='3'><img></td>
+                            <td colspan='3'>
+                                <img data-imagetype='External' src='https://www.construcar.cl/assets/img/logo-small.png' style='width: 80px;height: 70px;'>
+                            </td>
                             <td width='80'></td>
                         </tr>
                         <tr style=''>
@@ -39,7 +41,7 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
                                         <tr style='font-size:14px; color:#444444'>
                                             <td valign='bottom' style='padding:5px'>
                                                 <span style='margin-top: 10px; margin-bottom: 17px; font-weight: normal; font-family: Tahoma, &quot;Open Sans&quot;, sans-serif, serif, EmojiFont;'>
-                                                    Estimada(o) Construcar:<br><br>Te enviamos el detalle de la solicitud realizada.<br>Con fecha ".date('d-m-Y H:i:s').":
+                                                    Estimada(o) Construcar:<br><br>Se enviamos el detalle de la solicitud realizada.<br>Con fecha ".date('d-m-Y, H:i:s').":
                                                 </span>
                                             </td>
                                             <td align='right' valign='bottom' nowrap='' style='padding:5px'></td>
@@ -104,21 +106,6 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
                                                 <p style='margin: 0px; color: rgb(160, 160, 160); font-size: 13px; font-family: Tahoma, &quot;Open Sans&quot;, sans-serif, serif, EmojiFont;'>
                                                 ".$_POST['message']."
                                                 </p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan='3' style='padding-top:15px; padding-bottom:15px'>
-                                                <table width='100%' style='border:1px solid #E0E0E0'>
-                                                    <thead>
-                                                        <tr style='font-size:12px; color:#444444'>
-                                                            <td align='center' style='font-size:12px; padding:5px; background-color:#F5F5F5; font-family:Tahoma,Open Sans,sans-serif'>
-                                                                <p style='font-family:'>Nota: Este e-mail es generado de manera automatica, por favor no respondas a este mensaje. Asimismo, se han omitido acentos para evitar problemas de compatibilidad.</p>
-                                                            </td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    </tbody>
-                                                </table>
                                             </td>
                                         </tr>
                                     </tbody>
