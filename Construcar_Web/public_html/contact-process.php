@@ -39,7 +39,7 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
                                         <tr style='font-size:14px; color:#444444'>
                                             <td valign='bottom' style='padding:5px'>
                                                 <span style='margin-top: 10px; margin-bottom: 17px; font-weight: normal; font-family: Tahoma, &quot;Open Sans&quot;, sans-serif, serif, EmojiFont;'>
-                                                    Estimada(o) Construcar:<br>Te enviamos el detalle de la solicitud realizada.<br>Con fecha ".date('d-m-Y H:i:s').":
+                                                    Estimada(o) Construcar:<br><br>Te enviamos el detalle de la solicitud realizada.<br>Con fecha ".date('d-m-Y H:i:s').":
                                                 </span>
                                             </td>
                                             <td align='right' valign='bottom' nowrap='' style='padding:5px'></td>
@@ -98,17 +98,11 @@ if (isset($_POST['name']) && !empty($_POST['name']) &&
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style='border-bottom:1px solid #CCCCCC; padding-top:15px; padding-bottom:15px'>
+                                            <td style='border-bottom:1px solid #CCCCCC; padding-top:15px; padding-bottom:15px' colspan='3'>
                                                 <p style='margin: 0px; color: rgb(68, 68, 68); font-size: 14px; font-weight: 500; font-family: Tahoma, &quot;Open Sans&quot;, sans-serif, serif, EmojiFont;'>
                                                     <strong>Comentario:</strong></p>
                                                 <p style='margin: 0px; color: rgb(160, 160, 160); font-size: 13px; font-family: Tahoma, &quot;Open Sans&quot;, sans-serif, serif, EmojiFont;'>
                                                 ".$_POST['message']."
-                                                </p>
-                                            </td>
-                                            <td></td>
-                                            <td style='padding-top:15px; padding-bottom:15px'>
-                                                <p style='margin: 0px; color: rgb(68, 68, 68); font-size: 14px; font-weight: 500; font-family: Tahoma, &quot;Open Sans&quot;, sans-serif, serif, EmojiFont;'>
-                                                    <strong></strong>
                                                 </p>
                                             </td>
                                         </tr>
