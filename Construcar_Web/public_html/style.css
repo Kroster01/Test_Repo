@@ -1108,3 +1108,29 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .comment-list.style-2 article .gravatar { margin: 0px; }
 
 }
+
+
+.row-iconbox {
+  display: none;
+}
+.row-about {
+  display: none;
+}
+.row-services {
+  display: none;
+}
+.row-project {
+  display: none;
+}
+.row-testimonials {
+  display: none;
+}
+.row-quote {
+  display: none;
+}
+.row-tabs {
+  display: none;
+}
+.row-partner  {
+  display: none;
+}
