@@ -347,6 +347,12 @@
         ajaxSubscribe.eventLoad();
         ajaxContactForm();
         alertBox();
+        $("#phone").keypress(function (e) {
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                console.log("esto es una tecla...");
+                e.preventDefault();
+            }
+        });
     });
 
 })(jQuery);
