@@ -1108,8 +1108,15 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .comment-list.style-2 article .gravatar { margin: 0px; }
 
 }
-
-
+.item-content.nuestraEmp {
+  font-size: 17px;
+}
+.item-content.nuestraEmp > div {
+  padding-bottom: 10px;
+}
+.item-content.nuestraEmp > div > div > span > span.icon {
+  top: 12px;
+}
 .row-iconbox {
   display: none;
 }
@@ -1119,13 +1126,13 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .row-services {
   display: none;
 }
-.row-project {
+.row-project.parallax.parallax-1.parallax-overlay {
   display: none;
 }
-.row-testimonials {
+.row-testimonials.parallax-2 {
   display: none;
 }
-.row-quote {
+.row-quote.bg-row-1 {
   display: none;
 }
 .row-tabs {

@@ -86,6 +86,7 @@
 .themesflat-headings .sep.width-125 { width: 125px; }
 .themesflat-testimonials .sep.has-width.w80,
 .themesflat-headings .sep.has-width.w80 { width: 80px; height: 2px; }
+.themesflat-headings .sep.has-width.w300 { width: 300px; height: 2px; }
 .themesflat-headings .sep.has-width.w60 { width: 60px; height: 2px; }
 .themesflat-testimonials .sep.has-width.accent-bg,
 .themesflat-headings .sep.has-width.accent-bg { background-color: #ffc30c; }
