@@ -30,6 +30,10 @@
     overflow: hidden;
     /* fix for flashing background */
     -webkit-transform: translate3d(0px, 0px, 0px); }
+  .owl-carousel .owl-item {
+    width: 570px !important;
+    margin-top: 30px;
+  }
   .owl-carousel .owl-wrapper,
   .owl-carousel .owl-item {
     -webkit-backface-visibility: hidden;
