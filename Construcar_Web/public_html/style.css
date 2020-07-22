@@ -1124,9 +1124,6 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .row-about {
   display: none;
 }
-.row-services {
-  display: none;
-}
 .row-project.parallax.parallax-1.parallax-overlay {
   display: none;
 }
