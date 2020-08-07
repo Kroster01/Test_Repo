@@ -54,3 +54,5 @@ testem.log
 Thumbs.db
 
 angular-mysql-crud/client/e2e/
+
+angular-mysql-crud/server/node_modules/
