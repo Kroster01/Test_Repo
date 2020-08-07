@@ -32,3 +32,11 @@ Versión ddel video vs la instalada por defecto sin el @ de versión
 npm i bootstrap@4.4.1        - 4.5.2
 npm i jquery@3.5.0           - 3.5.1
 npm i @popperjs/core@2.3.3   - 2.4.4
+
+
+## creación de componentes
+
+ng g m home -m=app --route home
+ng g c shared/navbar
+ng g m auth/login -m=app --route login
+ng g m auth/register -m=app --route register
