@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Dependencias Intaladaes
+
+Versión ddel video vs la instalada por defecto sin el @ de versión
+npm i bootstrap@4.4.1        - 4.5.2
+npm i jquery@3.5.0           - 3.5.1
+npm i @popperjs/core@2.3.3   - 2.4.4

@@ -2,6 +2,12 @@
 https://www.youtube.com/watch?v=lxYB79ANJM8
 
 Comandos
+en modo vigilante (server)
+npm run build
+npm run dev
+
+en e cliente
+ng serve
 
 1.- 
     cd server
