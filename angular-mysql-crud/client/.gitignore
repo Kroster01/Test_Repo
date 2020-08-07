@@ -1,11 +1,3 @@
-
-*.code-workspace
-
-Test_project/node_modules/
-
-Test_project/projectAdm/e2e/
-
-Test_project/projectAdm/src/assets/
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
@@ -52,5 +44,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-angular-mysql-crud/client/e2e/
