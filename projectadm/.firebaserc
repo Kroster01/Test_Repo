@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-login-92a0a": {
+      "hosting": {
+        "projectadm": [
+          "ng-login-92a0a"
+        ]
+      }
+    }
+  }
+}

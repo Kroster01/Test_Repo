@@ -33,6 +33,10 @@ npm i bootstrap@4.4.1        - 4.5.2
 npm i jquery@3.5.0           - 3.5.1
 npm i @popperjs/core@2.3.3   - 2.4.4
 
+npm i firebase@7.17.2
+
+ng add @angular/fire
+
 
 ## creación de componentes
 
