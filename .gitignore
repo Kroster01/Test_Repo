@@ -56,3 +56,7 @@ Thumbs.db
 angular-mysql-crud/client/e2e/
 
 angular-mysql-crud/server/node_modules/
+
+projectadm/e2e/
+
+projectadm/src/assets/.gitkeep
