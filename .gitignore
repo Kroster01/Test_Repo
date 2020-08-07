@@ -52,3 +52,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+angular-mysql-crud/server/node_modules/
+
+angular-mysql-crud/server/build/
