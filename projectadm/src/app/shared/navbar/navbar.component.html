@@ -12,14 +12,18 @@
             </li>
         </ul>
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item" *ngIf="!isLogged">
                 <a class="nav-link" [routerLink]="['/login']">login</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item" *ngIf="isLogged">
                 <a class="nav-link" >logOut</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item" *ngIf="!isLogged">
                 <a class="nav-link" [routerLink]="['/register']">Register</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link">{{ user?.email }}</a>
             </li>
         </ul>
     </div>
