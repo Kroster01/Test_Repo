@@ -44,3 +44,5 @@ ng g m home -m=app --route home
 ng g c shared/navbar
 ng g m auth/login -m=app --route login
 ng g m auth/register -m=app --route register
+
+ng g s auth/services/auth
