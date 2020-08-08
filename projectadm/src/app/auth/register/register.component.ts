@@ -21,9 +21,16 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRegister(): void {
+  async onRegister(): Promise<void> {
     console.log('registerForm 2 -> ' + JSON.stringify(this.registerForm.value));
-    const {email, password} = this.registerForm.value;
-    this.authSvc.register(email, password);
+    try {
+      const {email, password} = this.registerForm.value;
+      const user = await this.authSvc.register(email, password);
+      if (user) {
+        this.router.navigate(['/home']);
+      }
+    } catch (error) {
+      console.log('Error Register.' + error);
+    }
   }
 }
