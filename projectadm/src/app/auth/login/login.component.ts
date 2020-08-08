@@ -20,7 +20,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLogin(): void {
+  async onLogin(): Promise<void> {
     console.log('loginForm 2 -> ' + JSON.stringify(this.loginForm.value));
+    try {
+      const {email, password} = this.loginForm.value;
+      const user = await this.authSvc.login(email, password);
+      if (user) {
+        this.router.navigate(['/home']);
+      }
+    } catch (error) {
+      console.log('Error Login.' + error);
+    }
   }
 }
