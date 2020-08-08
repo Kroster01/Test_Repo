@@ -17,9 +17,9 @@ export class NavbarComponent implements OnInit {
     this.user = await this.authSvc.getCurrentUser();
     if (this.user) {
       this.isLogged = true;
-    } else {
-      this.isLogged = false;
     }
   }
-
+  async onLogout() {
+    this.authSvc.logout();
+  }
 }
