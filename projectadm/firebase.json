@@ -4,7 +4,9 @@
       "target": "projectadm",
       "public": "dist/projectadm",
       "ignore": [
-        "**/.*"
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
       ],
       "headers": [
         {
