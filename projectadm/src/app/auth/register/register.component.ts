@@ -8,15 +8,15 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl()
+    email: new FormControl(''),
+    password: new FormControl('')
   });
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onRegister() {
-    console.log('Form -> ' + JSON.stringify(this.registerForm.value));
+  onRegister(): void {
+    console.log('registerForm 2 -> ' + JSON.stringify(this.registerForm.value));
   }
 }
