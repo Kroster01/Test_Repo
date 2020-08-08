@@ -2,15 +2,11 @@ import { Injectable } from '@angular/core';
 import { first } from 'rxjs/operators';
 
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
-import { User } from 'firebase';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  public user: User;
 
   constructor(public afAuth: AngularFireAuth) { }
 
@@ -40,11 +36,4 @@ export class AuthService {
     }
   }
 
-  getCurrentUser() {
-    try {
-      return this.afAuth.authState.pipe(first()).toPromise();
-    } catch (error) {
-      console.log(error);
-    }
-  }
 }
