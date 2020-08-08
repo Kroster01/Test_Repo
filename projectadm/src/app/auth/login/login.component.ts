@@ -27,6 +27,8 @@ export class LoginComponent implements OnInit {
       const user = await this.authSvc.login(email, password);
       if (user) {
         this.router.navigate(['/home']);
+      } else {
+        console.log('Usuario no encontrado.');
       }
     } catch (error) {
       console.log('Error Login.' + error);

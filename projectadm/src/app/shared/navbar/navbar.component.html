@@ -12,13 +12,13 @@
             </li>
         </ul>
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="!isLogged">
                 <a class="nav-link" routerLink="/login">login</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" >logOut</a>
+            <li class="nav-item" *ngIf="isLogged">
+                <a class="nav-link" (click)="onLogout()">logOut</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="!isLogged">
                 <a class="nav-link" routerLink="/register">Register</a>
             </li>
         </ul>
