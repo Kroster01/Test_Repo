@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +14,22 @@ export class LoginComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl('')
   });
-  constructor(private authSvc: AuthService) { }
+  constructor(private authSvc: AuthService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onLogin(): void {
+  async onLogin(): Promise<void> {
     console.log('loginForm 2 -> ' + JSON.stringify(this.loginForm.value));
-    const {email, password} = this.loginForm.value;
-    this.authSvc.login(email, password);
+    try {
+      const {email, password} = this.loginForm.value;
+      const user = await this.authSvc.login(email, password);
+      if (user) {
+        this.router.navigate(['/home']);
+      }
+    } catch (error) {
+      console.log('Error Login.' + error);
+    }
   }
 }

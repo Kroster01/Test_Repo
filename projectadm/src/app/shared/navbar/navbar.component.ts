@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,8 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 export class NavbarComponent implements OnInit {
   public isLogged = false;
   public user: any;
-  constructor(private authSvc: AuthService) { }
+  constructor(private authSvc: AuthService,
+              private router: Router) { }
 
   async ngOnInit() {
 
@@ -20,6 +22,11 @@ export class NavbarComponent implements OnInit {
     }
   }
   async onLogout() {
-    this.authSvc.logout();
+    try {
+      await this.authSvc.logout();
+      this.router.navigate(['/login']);
+    } catch (error) {
+      console.log('Error onLogout.' + error);
+    }
   }
 }
