@@ -67,3 +67,6 @@ https://www.youtube.com/watch?v=Y3ojE5SASFg
 
 #Angular9 Login Firebase Angular 9 recuperar contraseña
 https://www.youtube.com/watch?v=UExx6Cl4xRQ
+
+Cómo implementar un login de Google con Firebase en Angular
+https://www.youtube.com/watch?v=9zxH6EeJeIo

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
   providers: [AuthService]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
@@ -17,7 +17,12 @@ export class LoginComponent implements OnInit {
   constructor(private authSvc: AuthService,
               private router: Router) { }
 
-  ngOnInit(): void {
+  onGoogleLogin(): void {
+    try {
+      this.authSvc.loginGoogle();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async onLogin(): Promise<void> {
