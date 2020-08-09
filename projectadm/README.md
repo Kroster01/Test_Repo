@@ -70,3 +70,21 @@ https://www.youtube.com/watch?v=UExx6Cl4xRQ
 
 Cómo implementar un login de Google con Firebase en Angular
 https://www.youtube.com/watch?v=9zxH6EeJeIo
+
+
+
+###### PENDIENTES ######
+Angular guards - Proteger rutas con Angular 9, Firebase
+https://www.youtube.com/watch?v=iZYDn4W3mk4
+
+
+Subir varias imágenes firebase con Angular
+https://www.youtube.com/watch?v=xj4ZuJAJtj0
+
+
+Actualizar app de Angular 9 a Angular 10
+https://www.youtube.com/watch?v=o6lb5cFz19I
+
+
+omo convertir una app en Angular 10 a PWA
+https://www.youtube.com/watch?v=jI0eR95U0Z0

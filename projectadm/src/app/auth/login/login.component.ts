@@ -1,43 +1,51 @@
-import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
+import { AuthService } from '@auth/services/auth.service';
+import { Router } from '@angular/router';
+import { User } from '@app/shared/models/user.interface';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [AuthService]
 })
 export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl(''),
-    password: new FormControl('')
+    password: new FormControl(''),
   });
-  constructor(private authSvc: AuthService,
-              private router: Router) { }
+  constructor(private authSvc: AuthService, private router: Router) {}
 
-  onGoogleLogin(): void {
+  async onGoogleLogin() {
     try {
-      this.authSvc.loginGoogle();
+      const user = await this.authSvc.loginGoogle();
+      if (user) {
+        this.checkUserIsVerified(user);
+      }
     } catch (error) {
       console.log(error);
     }
   }
 
-  async onLogin(): Promise<void> {
+  async onLogin() {
+    const { email, password } = this.loginForm.value;
     try {
-      const {email, password} = this.loginForm.value;
       const user = await this.authSvc.login(email, password);
-      if (user && user.user?.emailVerified) {
-        this.router.navigate(['/home']);
-      } else if (user) {
-        this.router.navigate(['/verification-email']);
-      }  else {
-        this.router.navigate(['/register']);
+      if (user) {
+        this.checkUserIsVerified(user);
       }
     } catch (error) {
-      console.log('Error Login.' + error);
+      console.log(error);
+    }
+  }
+
+  private checkUserIsVerified(user: User) {
+    if (user && user.emailVerified) {
+      this.router.navigate(['/home']);
+    } else if (user) {
+      this.router.navigate(['/verification-email']);
+    } else {
+      this.router.navigate(['/register']);
     }
   }
 }
