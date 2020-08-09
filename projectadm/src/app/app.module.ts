@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { environment } from 'src/environments/environment';
+import { SendEmailComponent } from './auth/send-email/send-email.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    SendEmailComponent
   ],
   imports: [
     BrowserModule,

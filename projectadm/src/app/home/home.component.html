@@ -1,1 +1,13 @@
-<h1>Hello Nome Page</h1>
+<div class="card" *ngIf="user$ | async as user; else homePublic">
+    <div class="card-body">
+        <h1>Hello Home Page Private</h1>
+    </div>
+</div>
+
+<ng-template #homePublic>
+    <div class="card">
+        <div class="card-body">
+            <h1>Hello Home Page Public</h1>
+        </div>
+    </div>
+</ng-template>

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
   providers: [AuthService]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl('')
@@ -17,16 +17,24 @@ export class LoginComponent implements OnInit {
   constructor(private authSvc: AuthService,
               private router: Router) { }
 
-  ngOnInit(): void {
+  onGoogleLogin(): void {
+    try {
+      this.authSvc.loginGoogle();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async onLogin(): Promise<void> {
-    console.log('loginForm 2 -> ' + JSON.stringify(this.loginForm.value));
     try {
       const {email, password} = this.loginForm.value;
       const user = await this.authSvc.login(email, password);
-      if (user) {
+      if (user && user.user?.emailVerified) {
         this.router.navigate(['/home']);
+      } else if (user) {
+        this.router.navigate(['/verification-email']);
+      }  else {
+        this.router.navigate(['/register']);
       }
     } catch (error) {
       console.log('Error Login.' + error);

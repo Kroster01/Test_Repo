@@ -46,3 +46,27 @@ ng g m auth/login -m=app --route login
 ng g m auth/register -m=app --route register
 
 ng g s auth/services/auth
+
+ng g m auth/forgot-password --m=app --route forgot-password
+
+
+## step firebase
+
+npm install -g firebase-tools
+firebase login
+firebase init
+
+
+# videos para completar proyecto
+
+#Angular #Firebase #Bootstrap Login Angular 9, Firebase y Bootstrap 4 - Email & Contraseña
+https://www.youtube.com/watch?v=rwIOw7f0RHk
+
+#Firebase Enviar email de verificación Firebase #Angular
+https://www.youtube.com/watch?v=Y3ojE5SASFg
+
+#Angular9 Login Firebase Angular 9 recuperar contraseña
+https://www.youtube.com/watch?v=UExx6Cl4xRQ
+
+Cómo implementar un login de Google con Firebase en Angular
+https://www.youtube.com/watch?v=9zxH6EeJeIo

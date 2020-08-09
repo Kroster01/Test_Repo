@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -8,19 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss'],
   providers: [AuthService]
 })
-export class NavbarComponent implements OnInit {
-  public isLogged = false;
-  public user: any;
+export class NavbarComponent {
+  public user$: Observable<any> = this.authSvc.afAuth.user;
   constructor(private authSvc: AuthService,
               private router: Router) { }
 
-  async ngOnInit() {
-
-    this.user = await this.authSvc.getCurrentUser();
-    if (this.user) {
-      this.isLogged = true;
-    }
-  }
   async onLogout() {
     try {
       await this.authSvc.logout();
