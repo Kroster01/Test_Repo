@@ -22,12 +22,11 @@ export class RegisterComponent implements OnInit {
   }
 
   async onRegister(): Promise<void> {
-    console.log('registerForm 2 -> ' + JSON.stringify(this.registerForm.value));
     try {
       const {email, password} = this.registerForm.value;
       const user = await this.authSvc.register(email, password);
       if (user) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/verification-email']);
       }
     } catch (error) {
       console.log('Error Register.' + error);

@@ -21,14 +21,15 @@ export class LoginComponent implements OnInit {
   }
 
   async onLogin(): Promise<void> {
-    console.log('loginForm 2 -> ' + JSON.stringify(this.loginForm.value));
     try {
       const {email, password} = this.loginForm.value;
       const user = await this.authSvc.login(email, password);
-      if (user) {
+      if (user && user.user?.emailVerified) {
         this.router.navigate(['/home']);
-      } else {
-        console.log('Usuario no encontrado.');
+      } else if (user) {
+        this.router.navigate(['/verification-email']);
+      }  else {
+        this.router.navigate(['/register']);
       }
     } catch (error) {
       console.log('Error Login.' + error);
