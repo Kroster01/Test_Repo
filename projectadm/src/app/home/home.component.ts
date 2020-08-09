@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from '@app/auth/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  public user$: Observable<any> = this.authSvc.afAuth.user;
+  constructor(private authSvc: AuthService) { }
 
   ngOnInit(): void {
   }
