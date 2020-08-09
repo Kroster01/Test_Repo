@@ -47,6 +47,8 @@ ng g m auth/register -m=app --route register
 
 ng g s auth/services/auth
 
+ng g m auth/forgot-password --m=app --route forgot-password
+
 
 ## step firebase
 
