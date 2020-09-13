@@ -60,3 +60,5 @@ angular-mysql-crud/server/node_modules/
 projectadm/e2e/
 
 projectadm/src/assets/.gitkeep
+
+adminProject/e2e/
