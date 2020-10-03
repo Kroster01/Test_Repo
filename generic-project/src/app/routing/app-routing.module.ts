@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MenuHeaderComponent } from '../principal/home/menu-header/menu-header.component';
+import { LoginComponent } from '../principal/login-y-registro/login/login.component';
+import { LoginYRegistroModule } from '../principal/login-y-registro/login-y-registro.module';
 
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: () => import('../principal/login-y-registro/login-y-registro.module').then(mod => mod.LoginYRegistroModule)
+    component: LoginComponent
+    // loadChildren: () => import('../principal/login-y-registro/login-y-registro.module').then(mod => mod.LoginYRegistroModule)
   },
   {
     path: 'main',
