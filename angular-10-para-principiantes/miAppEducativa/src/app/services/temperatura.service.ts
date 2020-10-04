@@ -8,8 +8,8 @@ import { Injectable } from '@angular/core';
 // London,uk
 // &appid=
 // d39632eac253cba58028bf6cbf6230f0
-const urlBase: string = 'https://api.openweathermap.org/data/2.5/weather';
-const appId: string = 'd39632eac253cba58028bf6cbf6230f0';
+const urlBase = 'https://api.openweathermap.org/data/2.5/weather';
+const appId = 'd39632eac253cba58028bf6cbf6230f0';
 
 @Injectable({
   providedIn: 'root'
