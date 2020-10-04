@@ -23,7 +23,7 @@ export class TiempoComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private _tiempo: TemperaturaService
+    private _tiempoService: TemperaturaService
   ) { }
 
   ngOnInit(): void {
@@ -43,25 +43,21 @@ export class TiempoComponent implements OnInit {
   consultar() {
     this.showError = false;
     console.log('consultar: ', this.formulario);
-    this._tiempo.getEstadoTiempo(this.formulario.get('ciudad').value, this.formulario.get('codigo').value)
+    this._tiempoService.getEstadoTiempo(this.formulario.get('ciudad').value, this.formulario.get('codigo').value)
       .subscribe(respuesta => {
         this.tiempo = respuesta;
-
         this.name = this.tiempo.name;
         this.temperatura = this.tiempo.main.temp;
         this.humedad = this.tiempo.main.humidity;
         this.latitud = this.tiempo.coord.lat;
         this.longitud = this.tiempo.coord.lon;
         this.descripcion = this.tiempo.weather[0].description;
-
         console.log('respuesta: ' + JSON.stringify(respuesta));
       }, error => {
         console.log('error: ' + error);
 
         this.showError = true;
         this.mensajeError = 'Error al consultar el tiempo, intente nuevamete.';
-
-
       });
   }
 }

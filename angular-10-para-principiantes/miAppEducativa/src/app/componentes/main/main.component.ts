@@ -14,8 +14,8 @@ export class MainComponent implements OnInit {
     'Lima',
     'Sao Pablo',
   ];
-  showCiudad: boolean = true;
-  changeCss: boolean = true;
+  showCiudad = true;
+  changeCss = true;
 
   constructor() { }
 
