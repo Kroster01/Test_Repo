@@ -7,15 +7,15 @@ Steps to run this project:
 3. Run `npm start` command
 
 
-# Comandos Utilizados
+# Comandos Utilizados pas a paso.
 
 1. npm i typeorm -g
 2. typeorm init --name generic_project --database mysql --express
-3. npm i cors -- caturar yodas la peticiónes que vengan desde un fornt end -- 2.8.5
-4. npm i jsonwebtoken -- generar un token pata tener un aplicación segura -- 8.5.1
-5. npm i bcryptjs -- para encriptar el password de l user -- 2.4.3
-6. npm i class-validator -- validar los campos de la base de datos -- 0.11.1
-7. npm i -D ts-node-dev -- para reiniar el servidor -- 1.0.0-pre.44
+3. npm i cors -- caturar yodas la peticiónes que vengan desde un fornt end --- 2.8.5
+4. npm i jsonwebtoken -- generar un token pata tener un aplicación segura --- 8.5.1
+5. npm i bcryptjs -- para encriptar el password de l user --- 2.4.3
+6. npm i class-validator -- validar los campos de la base de datos --- 0.11.1
+7. npm i -D ts-node-dev -- para reiniar el servidor --- 1.0.0-pre.44
 8. npm i -D typescript -- 3.8.3
 9. npm i -D @types/bcryptjs -- 2.4.2
 9. npm i -D @types/cors -- 2.8.6
@@ -23,3 +23,9 @@ Steps to run this project:
 9. npm i -D @types/express -- 4.17.3
 9. npm i -D @types/node -- 8.10.59
 10. npm i helmet
+11. npm i ts-node
+
+# Comandos abreviados.
+
+* npm i cors jsonwebtoken bcryptjs class-validator helmet express mysql reflect-metadata ts-node typeorm
+* npm i -D ts-node-dev typescript @types/bcryptjs @types/cors @types/jsonwebtoken @types/express @types/node
