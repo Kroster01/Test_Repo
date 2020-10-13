@@ -1,6 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, Unique, CreateDateColumn, UpdateDateColumn } from "typeorm";
-import { MinLength, IsNotEmpty, IsEmail } from "class-validator";
-import * as bcryptjs from "bcryptjs";
+import { Entity, PrimaryGeneratedColumn, Column, Unique, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { MinLength, IsNotEmpty, IsEmail } from 'class-validator';
+import * as bcryptjs from 'bcryptjs';
 
 @Entity()
 @Unique(['username'])
@@ -28,7 +28,7 @@ export class Users {
         @Column()
         @CreateDateColumn()
         createdAt: string;
-    
+
         @Column()
         @UpdateDateColumn()
         updatedAt: string;

@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from "express";
-import { getRepository } from "typeorm";
-import { Users } from "../entity/Users";
+import { Request, Response, NextFunction } from 'express';
+import { getRepository } from 'typeorm';
+import { Users } from '../entity/Users';
 
 export const checkRole = (roles: Array<string>) => {
 
@@ -14,12 +14,12 @@ export const checkRole = (roles: Array<string>) => {
         } catch (error) {
             return res.status(401).json({ message: 'Not Authorized' });
         }
-        //Check
+        // Check
         const { role } = user;
         if (roles.includes(role)) {
             next();
         } else {
             res.status(401).json({ message: 'Not Authorized' });
         }
-    }
+    };
 };

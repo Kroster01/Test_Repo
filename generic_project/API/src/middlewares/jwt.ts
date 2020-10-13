@@ -1,8 +1,9 @@
-import { Request, Response, NextFunction } from "express";
-import * as jwt from "jsonwebtoken";
-import config from "../config/config";
+import { Request, Response, NextFunction } from 'express';
+import * as jwt from 'jsonwebtoken';
+import config from '../config/config';
 
-export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
+export const checkJwt = (req: Request, res: Response, next: NextFunction) =>
+{
     const token = <string>req.headers['auth'];
     let jwtPayload: any;
 
@@ -19,4 +20,4 @@ export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
     // Call Next
     next();
 
-}
+};
