@@ -32,6 +32,6 @@ This project uses the following license: [MIT](<https://choosealicense.com/licen
 
 ## Comandos abreviados.
 
-* npm i @angular/animations @angular/cdk @angular/common @angular/compiler @angular/core @angular/forms @angular/material @angular/platform-browser @angular/platform-browser-dynamic @angular/router @auth0/angular-jwt concurrently rxjs tslib zone.js
+* npm i @angular/animations @angular/cdk @angular/common @angular/compiler @angular/core @angular/forms @angular/material @angular/platform-browser @angular/platform-browser-dynamic @angular/router @auth0/angular-jwt concurrently rxjs tslib zone.js concurrently
 
 * npm i -D @angular-devkit/build-angular @angular/cli @angular/compiler-cli @types/node @types/jasmine @types/jasminewd2 codelyzer jasmine-core jasmine-spec-reporter karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter protractor ts-node tslint typescript
