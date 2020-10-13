@@ -35,7 +35,8 @@ export class UserController {
         user.password = password;
         user.role = role;
         //validate
-        const errores = await validate(user);
+        const validationOpt = { validationError: { terget: false, value: false } };
+        const errores = await validate(user, validationOpt);
         if (errores.length > 0) {
             return res.status(400).json(errores);
         }
@@ -66,8 +67,8 @@ export class UserController {
         } catch (error) {
             res.status(404).json({ message: 'User not Found.' });
         }
-
-        const errores = await validate(user);
+        const validationOpt = { validationError: { terget: false, value: false } };
+        const errores = await validate(user, validationOpt);
         if (errores.length > 0) {
             return res.status(400).json(errores);
         }
