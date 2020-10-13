@@ -18,6 +18,10 @@ class AuthController {
         } catch (error) {
             return res.status(400).json({ message: 'Username or Password incorecct!' });
         }
+        // check password
+        if (!user.chackPassword(password)) {
+            return res.status(400).json({ message: 'Username or Password are incorecct!' });
+        }
         res.send(user);
     }
 }
