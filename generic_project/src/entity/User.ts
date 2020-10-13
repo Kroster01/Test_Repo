@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, Unique, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { MinLength, IsNotEmpty, IsEmail } from "class-validator";
 import * as bcryptjs from "bcryptjs";
-//  TODO: IsEmail
+
 @Entity()
 @Unique(['username'])
 export class User {
@@ -11,10 +11,13 @@ export class User {
 
     @Column()
     @MinLength(6)
+    @IsEmail()
+    @IsNotEmpty()
     username: string;
 
     @Column()
     @MinLength(6)
+    @IsNotEmpty()
     password: string;
 
     @Column()

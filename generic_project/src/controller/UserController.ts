@@ -9,7 +9,13 @@ export class UserController {
 
     static getAll = async (req: Request, res: Response) => {
         const userRepository = getRepository(User);
-        const users = await userRepository.find();
+        let users:any;
+        try {
+            users = await userRepository.find();
+        } catch (error) {
+            res.status(404).json({ message: 'Something goes wrong!' });
+        }
+        
         if (users.length > 0) {
             res.send(users);
         } else {
