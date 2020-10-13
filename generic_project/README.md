@@ -29,3 +29,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## License
 
 This project uses the following license: [MIT](<https://choosealicense.com/licenses/mit/>)
+
+## Comandos abreviados.
+
+* npm i @angular/animations @angular/cdk @angular/common @angular/compiler @angular/core @angular/forms @angular/material @angular/platform-browser @angular/platform-browser-dynamic @angular/router @auth0/angular-jwt concurrently rxjs tslib zone.js
+
+* npm i -D @angular-devkit/build-angular @angular/cli @angular/compiler-cli @types/node @types/jasmine @types/jasminewd2 codelyzer jasmine-core jasmine-spec-reporter karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter protractor ts-node tslint typescript
