@@ -4,7 +4,7 @@ import * as bcryptjs from "bcryptjs";
 
 @Entity()
 @Unique(['username'])
-export class User {
+export class Users {
 
     @PrimaryGeneratedColumn()
     id: number;
@@ -24,20 +24,22 @@ export class User {
     @IsNotEmpty()
     role: string;
 
-    @Column()
-    @CreateDateColumn()
-    createdAt: string;
-
-    @Column()
-    @UpdateDateColumn()
-    updatedAt: string;
+    /*
+        @Column()
+        @CreateDateColumn()
+        createdAt: string;
+    
+        @Column()
+        @UpdateDateColumn()
+        updatedAt: string;
+    */
 
     hashPassword(): void {
         const salt = bcryptjs.genSaltSync(10);
         this.password = bcryptjs.hashSync(this.password, salt);
     }
 
-    chackPassword(password: string): boolean {
+    checkPassword(password: string): boolean {
         return bcryptjs.compareSync(password, this.password);
     }
 }

@@ -1,19 +1,20 @@
 import { Request, Response, NextFunction } from "express";
 import { getRepository } from "typeorm";
-import { User } from "../entity/User";
+import { Users } from "../entity/Users";
 
 export const checkRole = (roles: Array<string>) => {
 
     return async (req: Request, res: Response, next: NextFunction) => {
         const { userId } = res.locals.jwtPayload;
-        const userRepository = getRepository(User);
-        let user: User;
+        const userRepository = getRepository(Users);
+        let user: Users;
 
         try {
             user = await userRepository.findOneOrFail(userId);
         } catch (error) {
-            return res.status(401).send();
+            return res.status(401).json({ message: 'Not Authorized' });
         }
+        //Check
         const { role } = user;
         if (roles.includes(role)) {
             next();

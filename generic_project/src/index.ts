@@ -7,16 +7,19 @@ import routes from './routes';
 const PORT = process.env.PORT || 3000;
 
 
-createConnection().then(async () => {
+createConnection()
+    .then(async () => {
+        // create express app
+        const app = express();
+        // Middleware
+        app.use(cors());
+        app.use(helmet());
 
-    // create express app
-    const app = express();
-    // Middleware
-    app.use(cors());
-    app.use(helmet());
-    app.use(express.json());
-    app.use('/', routes);
-    // start express server
-    app.listen(PORT, ()=> console.log(`Server runnig on port: ${PORT}`));
+        app.use(express.json());
+        // Routes
+        app.use('/', routes);
 
-}).catch(error => console.log(error));
+        // start express server
+        app.listen(PORT, () => console.log(`Server runnig on port: ${PORT}`));
+
+    }).catch(error => console.log(error));

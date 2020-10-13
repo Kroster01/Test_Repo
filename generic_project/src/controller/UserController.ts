@@ -1,21 +1,21 @@
 import { getRepository } from "typeorm";
 import { Request, Response } from "express";
-import { User } from "../entity/User";
+import { Users } from "../entity/Users";
 import { validate } from "class-validator";
 
 export class UserController {
 
-    private userRepository = getRepository(User);
+    private userRepository = getRepository(Users);
 
     static getAll = async (req: Request, res: Response) => {
-        const userRepository = getRepository(User);
-        let users:any;
+        const userRepository = getRepository(Users);
+        let users: any;
         try {
             users = await userRepository.find();
         } catch (error) {
             res.status(404).json({ message: 'Something goes wrong!' });
         }
-        
+
         if (users.length > 0) {
             res.send(users);
         } else {
@@ -25,7 +25,7 @@ export class UserController {
 
     static getById = async (req: Request, res: Response) => {
         const { id } = req.params;
-        const userRepository = getRepository(User);
+        const userRepository = getRepository(Users);
         try {
             const user = await userRepository.findOneOrFail(id);
             res.send(user);
@@ -34,22 +34,22 @@ export class UserController {
         }
     };
 
-    static newUser = async (req: Request, res: Response) => {
+    static new = async (req: Request, res: Response) => {
         const { username, password, role } = req.body;
-        const user = new User();
+        const user = new Users();
         user.username = username;
         user.password = password;
         user.role = role;
         //validate
-        const validationOpt = { validationError: { terget: false, value: false } };
-        const errores = await validate(user, validationOpt);
-        if (errores.length > 0) {
-            return res.status(400).json(errores);
+        const validationOps = { validationError: { target: false, value: false } };
+        const errors = await validate(user, validationOps);
+        if (errors.length > 0) {
+            return res.status(400).json(errors);
         }
 
         // TODO: Hash PASSWORD.
 
-        const userRepository = getRepository(User);
+        const userRepository = getRepository(Users);
         try {
             user.hashPassword();
             await userRepository.save(user);
@@ -60,11 +60,11 @@ export class UserController {
         res.send('User Create.');
     };
 
-    static editUser = async (req: Request, res: Response) => {
+    static edit = async (req: Request, res: Response) => {
         let user: any;
         const { id } = req.params;
         const { username, role } = req.body;
-        const userRepository = getRepository(User);
+        const userRepository = getRepository(Users);
 
         try {
             user = await userRepository.findOneOrFail(id);
@@ -73,10 +73,10 @@ export class UserController {
         } catch (error) {
             res.status(404).json({ message: 'User not Found.' });
         }
-        const validationOpt = { validationError: { terget: false, value: false } };
-        const errores = await validate(user, validationOpt);
-        if (errores.length > 0) {
-            return res.status(400).json(errores);
+        const validationOps = { validationError: { target: false, value: false } };
+        const errors = await validate(user, validationOps);
+        if (errors.length > 0) {
+            return res.status(400).json(errors);
         }
 
         // Try to save user
@@ -88,10 +88,10 @@ export class UserController {
         res.status(201).json({ message: 'User update.' });
     };
 
-    static deleteUser = async (req: Request, res: Response) => {
+    static delete = async (req: Request, res: Response) => {
         const { id } = req.params;
-        const userRepository = getRepository(User);
-        let user: User;
+        const userRepository = getRepository(Users);
+        let user: Users;
 
         try {
             user = await userRepository.findOneOrFail(id);

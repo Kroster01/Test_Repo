@@ -12,12 +12,12 @@ router.get('/', [checkJwt, checkRole(['admin'])], UserController.getAll);
 router.get('/:id', [checkJwt, checkRole(['admin'])], UserController.getById);
 
 // Create a new User solo el admin puede crear users
-router.post('/', [checkJwt, checkRole(['admin'])], UserController.newUser);
+router.post('/', [checkJwt, checkRole(['admin'])], UserController.new);
 
 // Edit User
-router.patch('/:id', [checkJwt, checkRole(['admin'])], UserController.editUser);
+router.patch('/:id', [checkJwt, checkRole(['admin'])], UserController.edit);
 
 // Delete User
-router.delete('/:id', [checkJwt, checkRole(['admin'])], UserController.deleteUser);
+router.delete('/:id', [checkJwt, checkRole(['admin'])], UserController.delete);
 
 export default router;
