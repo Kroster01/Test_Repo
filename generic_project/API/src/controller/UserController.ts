@@ -1,7 +1,7 @@
-import { getRepository } from "typeorm";
-import { Request, Response } from "express";
-import { Users } from "../entity/Users";
-import { validate } from "class-validator";
+import { getRepository } from 'typeorm';
+import { Request, Response } from 'express';
+import { Users } from '../entity/Users';
+import { validate } from 'class-validator';
 
 export class UserController {
 
@@ -21,7 +21,7 @@ export class UserController {
         } else {
             res.status(404).json({ message: 'Not result.' });
         }
-    };
+    }
 
     static getById = async (req: Request, res: Response) => {
         const { id } = req.params;
@@ -32,7 +32,7 @@ export class UserController {
         } catch (error) {
             res.status(404).json({ message: 'Not result.' });
         }
-    };
+    }
 
     static new = async (req: Request, res: Response) => {
         const { username, password, role } = req.body;
@@ -40,7 +40,7 @@ export class UserController {
         user.username = username;
         user.password = password;
         user.role = role;
-        //validate
+        // validate
         const validationOps = { validationError: { target: false, value: false } };
         const errors = await validate(user, validationOps);
         if (errors.length > 0) {
@@ -58,7 +58,7 @@ export class UserController {
         }
         // All Okey
         res.send('User Create.');
-    };
+    }
 
     static edit = async (req: Request, res: Response) => {
         let user: any;
@@ -86,7 +86,7 @@ export class UserController {
             res.status(404).json({ message: 'Username already in use.' });
         }
         res.status(201).json({ message: 'User update.' });
-    };
+    }
 
     static delete = async (req: Request, res: Response) => {
         const { id } = req.params;
@@ -106,7 +106,7 @@ export class UserController {
             res.status(2001).json({ message: 'Error User ot deleted.' });
         }
         res.status(201).json({ message: 'User deleted.' });
-    };
+    }
 }
 
 export default UserController;
