@@ -1,45 +1,34 @@
-import { Entity, PrimaryGeneratedColumn, Column, Unique, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Unique, Column } from 'typeorm';
 import { MinLength, IsNotEmpty, IsEmail } from 'class-validator';
-import * as bcryptjs from 'bcryptjs';
+import * as bcrypt from 'bcryptjs';
 
 @Entity()
 @Unique(['username'])
 export class Users {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @Column()
+  @MinLength(6)
+  @IsEmail()
+  @IsNotEmpty()
+  username: string;
 
-    @Column()
-    @MinLength(6)
-    @IsEmail()
-    @IsNotEmpty()
-    username: string;
+  @Column()
+  @MinLength(6)
+  @IsNotEmpty()
+  password: string;
 
-    @Column()
-    @MinLength(6)
-    @IsNotEmpty()
-    password: string;
+  @Column()
+  @IsNotEmpty()
+  role: string;
 
-    @Column()
-    @IsNotEmpty()
-    role: string;
+  hashPassword(): void {
+    const salt = bcrypt.genSaltSync(10);
+    this.password = bcrypt.hashSync(this.password, salt);
+  }
 
-    /*
-        @Column()
-        @CreateDateColumn()
-        createdAt: string;
-
-        @Column()
-        @UpdateDateColumn()
-        updatedAt: string;
-    */
-
-    hashPassword(): void {
-        const salt = bcryptjs.genSaltSync(10);
-        this.password = bcryptjs.hashSync(this.password, salt);
-    }
-
-    checkPassword(password: string): boolean {
-        return bcryptjs.compareSync(password, this.password);
-    }
+  checkPassword(password: string): boolean {
+    return bcrypt.compareSync(password, this.password);
+  }
 }
