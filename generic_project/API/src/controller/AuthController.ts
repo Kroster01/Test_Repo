@@ -36,18 +36,18 @@ class AuthController {
     const { userId } = res.locals.jwtPayload;
     const { oldPassword, newPassword } = req.body;
 
-        if (!(oldPassword && newPassword)) {
-            return res.status(400).json({ message: 'Old password & new password are required' });
-        }
+    if (!(oldPassword && newPassword)) {
+      res.status(400).json({ message: 'Old password & new password are required' });
+    }
 
         const userRepository = getRepository(Users);
         let user: Users;
 
-        try {
-            user = await userRepository.findOneOrFail(userId);
+    try {
+      user = await userRepository.findOneOrFail(userId);
     } catch (e) {
-            return res.status(400).json({ message: 'Somenthing goes wrong!' });
-        }
+      res.status(400).json({ message: 'Somenthing goes wrong!' });
+    }
 
     if (!user.checkPassword(oldPassword)) {
       return res.status(401).json({ message: 'Check your old Password' });
@@ -76,5 +76,4 @@ class AuthController {
     }
 
 }
-
 export default AuthController;

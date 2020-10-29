@@ -12,11 +12,12 @@ export const checkRole = (roles: Array<string>) => {
       user = await userRepository.findOneOrFail(userId);
     } catch (e) {
       return res.status(401).json({ message: 'Not Authorized' });
-        }
-        // Check
-        const { role } = user;
-        if (roles.includes(role)) {
-            next();
+    }
+
+    //Check
+    const { role } = user;
+    if (roles.includes(role)) {
+      next();
     } else {
       res.status(401).json({ message: 'Not Authorized' });
     }
