@@ -61,7 +61,7 @@ export class UserController {
   };
 
   static edit = async (req: Request, res: Response) => {
-        let user: any;
+    let user: any;
     const { id } = req.params;
     const { username, role } = req.body;
 
