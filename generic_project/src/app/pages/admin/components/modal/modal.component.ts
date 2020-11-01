@@ -21,7 +21,7 @@ export class ModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public userForm: BaseFormUser,
     private userSvc: UsersService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     if (this.data?.user.hasOwnProperty('id')) {
@@ -31,6 +31,11 @@ export class ModalComponent implements OnInit {
       this.userForm.baseForm.updateValueAndValidity();
       this.data.title = 'Edit user';
       this.pathFormData();
+    } else {
+      this.userForm.baseForm.patchValue({
+        username: '',
+        password: ''
+      });
     }
   }
 

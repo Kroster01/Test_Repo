@@ -6,13 +6,10 @@ export class BaseFormUser {
   private isValidEmail = /\S+@\S+\.\S+/;
   errorMessage = null;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   baseForm = this.fb.group({
-    username: [
-      '',
-      [Validators.required, Validators.pattern(this.isValidEmail)],
-    ],
+    username: ['', [Validators.required, Validators.pattern(this.isValidEmail)]],
     password: ['', [Validators.required, Validators.minLength(5)]],
     role: ['', [Validators.required]],
   });
