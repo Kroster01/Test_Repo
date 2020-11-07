@@ -1,0 +1,18 @@
+
+.dataTables_length {
+    float: left;
+}
+
+.dataTables_paginate {
+    float: right;
+}
+
+.dataTables_filter {
+    float: right;
+}
+
+.error {
+    background-color: rgba(243, 42, 42, 0.67) !important;
+    font-size: 17px !important;
+    color: #555 !important;
+  }

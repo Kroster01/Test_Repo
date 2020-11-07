@@ -1,0 +1,40 @@
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #fff0;
+}
+/*
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff0;
+}*/
+
+table {
+    font-size: 0.9em;
+}
+
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+.btn-file {
+	position: relative;
+	overflow: hidden;
+}
+.btn-file input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
