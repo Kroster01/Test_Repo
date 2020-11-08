@@ -19,6 +19,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {
     this.checkToken();
   }
+
   get user$(): Observable<UserResponse> {
     return this.user.asObservable();
   }
@@ -26,6 +27,7 @@ export class AuthService {
   get userValue(): UserResponse {
     return this.user.getValue();
   }
+
   login(authData: User): Observable<UserResponse | void> {
     return this.http
       .post<UserResponse>(`${environment.API_URL}/auth/login`, authData)
@@ -47,15 +49,15 @@ export class AuthService {
 
   private checkToken(): void {
     const user = JSON.parse(localStorage.getItem('user')) || null;
-
     if (user) {
       const isExpired = helper.isTokenExpired(user.token);
-
       if (isExpired) {
         this.logout();
       } else {
         this.user.next(user);
       }
+    } else {
+      this.logout();
     }
   }
 
@@ -72,4 +74,5 @@ export class AuthService {
     window.alert(errorMessage);
     return throwError(errorMessage);
   }
+
 }
