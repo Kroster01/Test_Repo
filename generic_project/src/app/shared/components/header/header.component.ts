@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   @Output() toggleSidenav = new EventEmitter<void>();
 
-  constructor(private authSvc: AuthService) {}
+  constructor(private authSvc: AuthService) { }
 
   ngOnInit(): void {
     this.authSvc.user$

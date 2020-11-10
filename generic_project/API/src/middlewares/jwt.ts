@@ -4,7 +4,7 @@ import config from '../config/config';
 
 export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
   const token = <string>req.headers['auth'];
-    let jwtPayload: any;
+  let jwtPayload: any;
 
   try {
     jwtPayload = <any>jwt.verify(token, config.jwtSecret);
@@ -13,7 +13,7 @@ export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
     return res.status(401).json({ message: 'Not Authorized' });
   }
 
-    const { userId, username } = jwtPayload;
+  const { userId, username } = jwtPayload;
 
   const newToken = jwt.sign({ userId, username }, config.jwtSecret, { expiresIn: '1h' });
   res.setHeader('token', newToken);

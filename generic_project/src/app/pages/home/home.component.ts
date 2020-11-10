@@ -14,13 +14,13 @@ export class HomeComponent implements OnInit {
   private destroy$ = new Subject<any>();
   user: any;
 
-  constructor(public authSvc: AuthService) {}
+  constructor(public authSvc: AuthService) { }
 
   ngOnInit(): void {
     this.authSvc.user$
-    .pipe(takeUntil(this.destroy$))
-    .subscribe((user: UserResponse) => {
-      this.user = user;
-    });
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((user: UserResponse) => {
+        this.user = user;
+      });
   }
 }

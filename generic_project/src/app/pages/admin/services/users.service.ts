@@ -9,7 +9,7 @@ import { User } from '@app/shared/models/user.interface';
   providedIn: 'root',
 })
 export class UsersService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAll(): Observable<User[]> {
     return this.http

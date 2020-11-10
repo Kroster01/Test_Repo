@@ -9,4 +9,4 @@ import { MaterialModule } from '@app/material.module';
   declarations: [UsersComponent],
   imports: [CommonModule, UsersRoutingModule, MaterialModule],
 })
-export class UsersModule {}
+export class UsersModule { }

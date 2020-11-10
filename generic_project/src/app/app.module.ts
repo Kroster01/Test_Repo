@@ -29,4 +29,4 @@ import { AdminInterceptor } from '@shared/interceptors/admin-interceptor';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

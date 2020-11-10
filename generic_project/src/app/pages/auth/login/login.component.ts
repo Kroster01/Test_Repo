@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private authSvc: AuthService,
     private router: Router,
     public loginForm: BaseFormUser
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loginForm.baseForm.get('role').setValidators(null);

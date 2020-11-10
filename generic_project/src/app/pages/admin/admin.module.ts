@@ -16,4 +16,4 @@ import { MaterialModule } from '@app/material.module';
     ReactiveFormsModule,
   ],
 })
-export class AdminModule {}
+export class AdminModule { }

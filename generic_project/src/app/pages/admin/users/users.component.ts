@@ -27,18 +27,18 @@ export class UsersComponent implements AfterViewInit, OnInit, OnDestroy {
 
   @ViewChild(MatSort) sort: MatSort;
   constructor(private userSvc: UsersService,
-              private dialog: MatDialog,
-              private authSvc: AuthService) {}
+    private dialog: MatDialog,
+    private authSvc: AuthService) { }
 
   ngOnInit(): void {
     this.userSvc.getAll().subscribe((users) => {
       this.dataSource.data = users;
     });
     this.authSvc.user$
-    .pipe(takeUntil(this.destroy$))
-    .subscribe((user: UserResponse) => {
-      this.isAdmin = user?.role;
-    });
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((user: UserResponse) => {
+        this.isAdmin = user?.role;
+      });
   }
 
   ngAfterViewInit(): void {

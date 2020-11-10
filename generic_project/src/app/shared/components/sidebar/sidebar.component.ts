@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
   private destroy$ = new Subject<any>();
 
   constructor(private authSvc: AuthService,
-              private utilsSvc: UtilsService) { }
+    private utilsSvc: UtilsService) { }
 
   ngOnInit(): void {
     this.authSvc.user$

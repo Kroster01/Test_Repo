@@ -40,8 +40,8 @@ class AuthController {
       res.status(400).json({ message: 'Old password & new password are required' });
     }
 
-        const userRepository = getRepository(Users);
-        let user: Users;
+    const userRepository = getRepository(Users);
+    let user: Users;
 
     try {
       user = await userRepository.findOneOrFail(userId);
@@ -57,23 +57,23 @@ class AuthController {
     const validationOps = { validationError: { target: false, value: false } };
     const errors = await validate(user, validationOps);
 
-        if (errors.length > 0) {
-            return res.status(400).json(errors);
-        }
-
-        // Hash password
-        user.hashPassword();
-
-        try {
-            user.hashPassword();
-            await userRepository.save(user);
-        } catch (error) {
-            res.status(409).json({ message: 'Passsword not change.' });
-        }
-        // All Okey
-        res.send('Passsword change!.');
-
+    if (errors.length > 0) {
+      return res.status(400).json(errors);
     }
+
+    // Hash password
+    user.hashPassword();
+
+    try {
+      user.hashPassword();
+      await userRepository.save(user);
+    } catch (error) {
+      res.status(409).json({ message: 'Passsword not change.' });
+    }
+    // All Okey
+    res.send('Passsword change!.');
+
+  }
 
 }
 export default AuthController;
