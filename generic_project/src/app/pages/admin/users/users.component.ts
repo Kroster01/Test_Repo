@@ -12,6 +12,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from './../components/modal/modal.component';
 import { Subject } from 'rxjs';
+import { AuthService } from '@app/pages/auth/auth.service';
+import { UserResponse } from '@app/shared/models/user.interface';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -20,15 +22,22 @@ import { Subject } from 'rxjs';
 export class UsersComponent implements AfterViewInit, OnInit, OnDestroy {
   displayedColumns: string[] = ['id', 'role', 'username', 'actions'];
   dataSource = new MatTableDataSource();
-
+  isAdmin = null;
   private destroy$ = new Subject<any>();
 
   @ViewChild(MatSort) sort: MatSort;
-  constructor(private userSvc: UsersService, private dialog: MatDialog) {}
+  constructor(private userSvc: UsersService,
+              private dialog: MatDialog,
+              private authSvc: AuthService) {}
 
   ngOnInit(): void {
     this.userSvc.getAll().subscribe((users) => {
       this.dataSource.data = users;
+    });
+    this.authSvc.user$
+    .pipe(takeUntil(this.destroy$))
+    .subscribe((user: UserResponse) => {
+      this.isAdmin = user?.role;
     });
   }
 
@@ -52,7 +61,7 @@ export class UsersComponent implements AfterViewInit, OnInit, OnDestroy {
 
   onOpenModal(user = {}): void {
     console.log('User->', user);
-    let dialogRef = this.dialog.open(ModalComponent, {
+    const dialogRef = this.dialog.open(ModalComponent, {
       height: '400px',
       width: '600px',
       hasBackdrop: false,
