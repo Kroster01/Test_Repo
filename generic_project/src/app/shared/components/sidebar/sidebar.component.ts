@@ -12,7 +12,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class SidebarComponent implements OnInit {
 
-  private isAdmin = null;
+  isAdmin = null;
   private destroy$ = new Subject<any>();
 
   constructor(private authSvc: AuthService,
