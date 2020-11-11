@@ -19,7 +19,7 @@ export class UserController {
     } else {
       res.status(404).json({ message: 'Not result' });
     }
-  };
+  }
 
   static getById = async (req: Request, res: Response) => {
     const { id } = req.params;
@@ -30,7 +30,7 @@ export class UserController {
     } catch (e) {
       res.status(404).json({ message: 'Not result' });
     }
-  };
+  }
 
   static new = async (req: Request, res: Response) => {
     const { username, password, role } = req.body;
@@ -58,7 +58,7 @@ export class UserController {
     }
     // All ok
     res.send('User created');
-  };
+  }
 
   static edit = async (req: Request, res: Response) => {
     let user: any;
@@ -89,7 +89,7 @@ export class UserController {
     }
 
     res.status(201).json({ message: 'User update' });
-  };
+  }
 
   static delete = async (req: Request, res: Response) => {
     const { id } = req.params;
@@ -105,7 +105,7 @@ export class UserController {
     // Remove user
     userRepository.delete(id);
     res.status(201).json({ message: ' User deleted' });
-  };
+  }
 }
 
 export default UserController;

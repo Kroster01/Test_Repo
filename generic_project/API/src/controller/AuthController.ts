@@ -4,32 +4,43 @@ import { Users } from '../entity/Users';
 import * as jwt from 'jsonwebtoken';
 import config from '../config/config';
 import { validate } from 'class-validator';
+import { Userad } from '../entity/Userad';
 
 class AuthController {
   static login = async (req: Request, res: Response) => {
+    let userId = 0;
+    let userUsername = '';
+    let userRole = '';
     const { username, password } = req.body;
-
     if (!(username && password)) {
       return res.status(400).json({ message: ' Username & Password are required!' });
     }
-
-    const userRepository = getRepository(Users);
-    let user: Users;
-
-    try {
-      user = await userRepository.findOneOrFail({ where: { username } });
-    } catch (e) {
-      return res.status(400).json({ message: ' Username or password incorecct!' });
+    const user: Users = await AuthController.findUsers(username);
+    let userAd: Userad;
+    if (user === null) {
+      userAd = await AuthController.findUserAd(username);
+      if (userAd === null) {
+        return res.status(400).json({ message: ' Username or password incorecct!' });
+      } else {
+        // Check password
+        if (!userAd.checkPassword(password)) {
+          return res.status(400).json({ message: 'Username or Password are incorrect!' });
+        }
+        userId = userAd.id;
+        userUsername = userAd.username;
+        userRole = userAd.role;
+      }
+    } else {
+      // Check password
+      if (!user.checkPassword(password)) {
+        return res.status(400).json({ message: 'Username or Password are incorrect!' });
+      }
+      userId = user.id;
+      userUsername = user.username;
+      userRole = user.role;
     }
-
-    // Check password
-    if (!user.checkPassword(password)) {
-      return res.status(400).json({ message: 'Username or Password are incorrect!' });
-    }
-
-    const token = jwt.sign({ userId: user.id, username: user.username }, config.jwtSecret, { expiresIn: '1h' });
-
-    res.json({ message: 'OK', token, userId: user.id, role: user.role, username: user.username });
+    const token = jwt.sign({ userId, username: userUsername }, config.jwtSecret, { expiresIn: '1h' });
+    res.json({ message: 'OK', token, userId, role: userRole, username: userUsername });
   }
 
   static changePassword = async (req: Request, res: Response) => {
@@ -73,6 +84,33 @@ class AuthController {
     // All Okey
     res.send('Passsword change!.');
 
+  }
+
+  private static async findUsers(username: any) {
+    const userRepository = getRepository(Users);
+    let user: Users;
+    try {
+      user = await userRepository.findOneOrFail({ where: { username } });
+    } catch (e) {
+      // return res.status(400).json({ message: ' Username or password incorecct!' });
+      return null;
+    }
+    return user;
+  }
+
+  private static async findUserAd(username: any) {
+    const userAdRepository = getRepository(Userad);
+    let userad: Userad;
+    try {
+      userad = await userAdRepository.findOneOrFail({ where: { username } });
+    } catch (e) {
+      if (e.name === 'EntityNotFound') { }
+      const name = e.name;
+      const message = e.message;
+      // return res.status(400).json({ message: ' Username or password incorecct! ad 1 ', name, message });
+      return null;
+    }
+    return userad;
   }
 
 }
