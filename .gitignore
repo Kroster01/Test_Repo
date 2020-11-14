@@ -53,8 +53,3 @@ testem.log
 Thumbs.db
 
 *.gitkeep
-
-
-angular-mysql-crud/server/node_modules/
-
-generic_project/API/node_modules/
