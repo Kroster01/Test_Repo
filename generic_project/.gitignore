@@ -1,10 +1,3 @@
-
-*.code-workspace
-
-
-*/e2e/
-
-Test_project/projectAdm/src/assets/
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
@@ -15,7 +8,7 @@ Test_project/projectAdm/src/assets/
 /bazel-out
 
 # dependencies
-*/node_modules/*
+*/node_modules
 
 # profiling files
 chrome-profiler-events*.json
@@ -31,7 +24,7 @@ speed-measure-plugin*.json
 *.sublime-workspace
 
 # IDE - VSCode
-*/.vscode/*
+.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -51,5 +44,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-*.gitkeep
