@@ -25,7 +25,11 @@ $(document).on('click', '#submitMail', function (e)
 		//alert(responseValide);
 		return;
 	}
-
+	// console.log('  *******  nombre: ' + $("#input-10").val().trim());
+	// console.log('  *******  correo: ' + $("#input-11").val().trim());
+	// console.log('  *******  motivoContacto: ' + $("#w3_agileits_select").children(":selected").val().trim());
+	// console.log('  *******  celular: ' + $("#input-12").val().trim());
+	// console.log('  *******  mensaje: ' + $("#textAreaMensaje").val().trim());
 	var formData = new FormData();
 	formData.append("nombre", $("#input-10").val().trim());
 	formData.append("correo", $("#input-11").val().trim());
@@ -44,17 +48,19 @@ $(document).on('click', '#submitMail', function (e)
 		{
 		    var result = null;
 		    try {
+		        // console.log('response...');
+				// console.log(JSON.stringify(response));
                 result = jQuery.parseJSON( response );
             }
             catch(err) {
                 showModal("<?php echo lang('genericErrorJQ') ?>"); 
-				console.log(err.message);
+				// console.log(JSON.stringify(err));
 				return;
             }
 
 			if (result.Error) {
 				showModal(result.ErrorMessage);
-				console.log(result.DebuggerLog);
+				// console.log(JSON.stringify(result));
 				return;
 			}
             
@@ -62,11 +68,11 @@ $(document).on('click', '#submitMail', function (e)
 			showModal(result.Message);
 
 		},error: function(response,status,error){
-			console.log(response.responseText);
+			// console.log('response.responseText');
+			// console.log(JSON.stringify(response.responseText));
 			showModal("En estos Momentos no hemos pordido completar su solicitud.");
 		}
 	});
-
 });
 
 function cleanContactForm () {
