@@ -41,21 +41,22 @@ class Email_Controller extends CI_Controller {
 		$data["mensaje"] = $mensaje;
 		$body = $this->load->view('genericPage/email/templateEmailContactamos.php',$data,TRUE);
 
-		$config = Array(        
+		$config = Array(
+			'smtp_crypto' => "ssl",    
 			'protocol' => 'smtp',
-			'smtp_host' => "mail.puertofalucho.cl",
-			'smtp_port' => 26,
+			'smtp_host' => "puertofalucho.cl",
+			'smtp_port' => 465,
 			'smtp_user' => "contacto@puertofalucho.cl",
-			'smtp_pass' => "contacto.2018",
+			'smtp_pass' => "Puertofalucho2020",
 			'smtp_timeout' => '4',
 			'mailtype'  => 'html', 
 			'charset'   => 'iso-8859-1'
 		);
-        
+
         $this->load->library('email', $config);
 		$this->email->set_newline('\r\n');
 		
-		$this->email->from('contacto@puertofalucho.cl', 'Puerto Falucho Corporate');
+		$this->email->from('contacto@puertofalucho.cl', 'Puerto Falucho');
 		
 		$this->email->to($varto);
 		$this->email->subject('Contacto desde la Web - '.utf8_decode($motivoContacto).' - '.date("d-m-Y H/i/s"));
