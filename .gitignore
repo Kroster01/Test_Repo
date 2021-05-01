@@ -1,25 +1,18 @@
-
-*.code-workspace
-
-
-*/e2e/
-
-Test_project/projectAdm/src/assets/
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-*/dist
-*/tmp
-*/out-tsc
+/dist
+/tmp
+/out-tsc
 # Only exists if Bazel was run
 /bazel-out
 
 # dependencies
-*/node_modules/*
+/node_modules
 
 # profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
+chrome-profiler-events.json
+speed-measure-plugin.json
 
 # IDEs and editors
 /.idea
@@ -31,7 +24,7 @@ speed-measure-plugin*.json
 *.sublime-workspace
 
 # IDE - VSCode
-*/.vscode/*
+.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -51,5 +44,28 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+package-lock.json
+yarn.lock
+firebase.json
+.firebaserc
+.gradle/4.10.1/fileHashes/fileHashes.lock
+.gradle/4.10.1/taskHistory/taskHistory.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/4.10.1/gc.properties
+.gradle/4.10.1/fileChanges/last-build.bin
+.gradle/buildOutputCleanup/cache.properties
+android/app/.npmignore
+.firebase/hosting.*
 
-*.gitkeep
+#Firebase
+.firebase
+.firebaserc
+firebase.json
+firebase-debug.log
+
+*.code-workspace
+*/e2e/
+Test_project/projectAdm/src/assets/
+angular-10-para-principiantes/miAppEducativa/package-lock.json
+angular-mysql-crud/client/package-lock.json
+angular-mysql-crud/server/package-lock.json
