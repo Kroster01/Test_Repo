@@ -33,3 +33,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2) `npm install jquery -> ^3.7.1`
 3) `npm install @popperjs/core -> ^2.11.8`
 
+Para cambiar los temas de bootstrap ( Layout ) https://bootswatch.com/
+
