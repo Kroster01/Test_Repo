@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Dependencias instaladas:
+
+1) `npm install bootstrap -> ^5.3.2`
+2) `npm install jquery -> ^3.7.1`
+3) `npm install @popperjs/core -> ^2.11.8`
+
