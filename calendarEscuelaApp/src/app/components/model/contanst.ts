@@ -5,7 +5,7 @@ export class Asignaturas {
         this.Matematicas = new Matematicas('Matematicas', '#fb332f');
         this.Tecnologia = new Tecnologia('Tecnología', '#f6b1bb');
         this.Ingles = new Ingles('Ingles', '#5370ff');
-        this.ArtesVisuales = new ArtesVisuales('Artes Visuales', '#7c73b2'); 
+        this.ArtesVisuales = new ArtesVisuales('Artes Visuales', '#7c73b2');
         this.Musica = new Musica('Musica', '#62afbb');
         this.Historia = new Historia('Historia', '#a55c5c');
     }
@@ -80,7 +80,7 @@ export interface Tarea {
     actividad: string;
 }
 export class Tarea {
-    constructor(dia: number, mes: number, asignatura: any, actividad: string) {
+    constructor(dia: number, mes: number, asignatura: Asignatura, actividad: string) {
         this.dia = dia;
         this.mes = mes;
         this.asignatura = asignatura;
@@ -100,4 +100,15 @@ export interface Semana {
 
 export interface Semanas {
     semana: Semana[];
+}
+
+export interface AgrupaTarea {
+    asignatura: Asignatura;
+    tareas: Tarea[];
+}
+export class AgrupaTarea {
+    constructor(asignatura: Asignatura, tareas: Tarea[]) {
+        this.asignatura = asignatura;
+        this.tareas = tareas;
+    }
 }

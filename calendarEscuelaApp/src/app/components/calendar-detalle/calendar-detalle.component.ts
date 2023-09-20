@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Asignatura, Asignaturas, Tarea } from '../model/contanst';
+import { Component, OnInit, Input } from '@angular/core';
+import { AgrupaTarea, Asignatura, Asignaturas, Tarea } from '../model/contanst';
 
 @Component({
   selector: 'app-calendar-detalle',
@@ -8,22 +8,40 @@ import { Asignatura, Asignaturas, Tarea } from '../model/contanst';
 })
 export class CalendarDetalleComponent implements OnInit {
 
-  tareas: Tarea[] = [];
+  @Input() tareas!: Tarea[];
   asignaturas: Asignatura[] = [];
   asignaturasTemplete = new Asignaturas();
+
+  agrupaTarea: AgrupaTarea[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.agruparAsignaturasPorColor();
+  }
+
+  private agruparAsignaturasPorColor(): void {
     Object.entries(this.asignaturasTemplete).forEach(([key, value]) => {
-      //console.log(value);
-      let sdsd: Asignatura = value;
-      this.asignaturas.push(sdsd);
-      //console.log('nombre: ' + nombre);
-      //console.log('color: ' + color);
-      //console.log('*****************************************************');console.log('*****************************************************');
+      this.asignaturas.push(value);
+      let tareas: Tarea[] = this.agruparAsignaturasPorTareas(value.nombre);
+      if (tareas.length > 0) {
+        let agrupaTareaa: AgrupaTarea = new AgrupaTarea(value, tareas);
+        this.agrupaTarea.push(agrupaTareaa);
+      }
+      tareas = [];
     });
+    console.log('sdsd');
+  }
+
+  private agruparAsignaturasPorTareas(nombreAsignatura: string): Tarea[] {
+    let tareas: Tarea[] = [];
+    for (const index in this.tareas) {
+      console.log('' + this.tareas[index].asignatura.nombre);
+      if (this.tareas[index].asignatura.nombre === nombreAsignatura) {
+        tareas.push(this.tareas[index]);
+      }
+    }
+    return tareas;
   }
 
 }
-
