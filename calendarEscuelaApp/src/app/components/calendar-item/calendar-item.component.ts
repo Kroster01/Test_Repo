@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Asignaturas, Dia, Asignatura, Semana, Semanas, Tarea } from '../model/contanst';
 
 @Component({
   selector: 'app-calendar-item',
@@ -10,8 +11,9 @@ export class CalendarItemComponent implements OnInit {
   semanas: Semanas[] = [];
   semana: Semana[] = [];
   diasSemana: string[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  asignaturas: Asignatura[] = [];
   tareas: Tarea[] = [];
-
+  asignaturasTemplete = new Asignaturas();
 
   constructor() { }
 
@@ -68,110 +70,46 @@ export class CalendarItemComponent implements OnInit {
   }
 
   private loadTareas(): void {
-    let tarea: Tarea = new Tarea();
-    let asign: Asignatura = new Asignatura('Lenguaje', 'yellow');
-    tarea.dia = 13;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'Dictado vocaublario y sinonimos';
+    let tarea: Tarea = new Tarea(13, 9, this.asignaturasTemplete.Lenguaje, 'Dictado vocaublario y sinonimos');
     this.tareas.push(tarea);
 
-    tarea = new Tarea();
-    tarea.dia = 25;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'Libro "El cronograma de Beatriz"';
+    tarea = new Tarea(25, 9, this.asignaturasTemplete.Lenguaje, 'Libro "El cronograma de Beatriz"');
     this.tareas.push(tarea);
 
-    tarea = new Tarea();
-    tarea.dia = 28;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'Libro "El cronograma de Beatriz"';
+    tarea = new Tarea(28, 9, this.asignaturasTemplete.Lenguaje, 'Libro "El cronograma de Beatriz"');
     this.tareas.push(tarea);
 
-    asign = new Asignatura('Ciencias', 'green');
-    tarea = new Tarea();
-    tarea.dia = 27;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'Elaboración de afiche co acciones que evidencien el cuidado del agua y acciones que malgastar';
+    tarea = new Tarea(27, 9, this.asignaturasTemplete.Ciencias, 'Elaboración de afiche co acciones que evidencien el cuidado del agua y acciones que malgastar');
     this.tareas.push(tarea);
 
-    asign = new Asignatura('Matematicas', 'red');
-    tarea = new Tarea();
-    tarea.dia = 14;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea uno ';
+    tarea = new Tarea(14, 9, this.asignaturasTemplete.Matematicas, 'tarea uno');
     this.tareas.push(tarea);
 
-    tarea = new Tarea();
-    tarea.dia = 14;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea dos';
+    tarea = new Tarea(14, 9, this.asignaturasTemplete.Matematicas, 'tarea dos');
     this.tareas.push(tarea);
 
-    tarea = new Tarea();
-    tarea.dia = 14;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea tres';
+    tarea = new Tarea(14, 9, this.asignaturasTemplete.Matematicas, 'tarea tres');
     this.tareas.push(tarea);
 
-    asign = new Asignatura('Tecnología', 'deeppink');
-    tarea = new Tarea();
-    tarea.dia = 7;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea Uno';
+    tarea = new Tarea(7, 9, this.asignaturasTemplete.Tecnologia, 'tarea Uno');
     this.tareas.push(tarea);
 
-    asign = new Asignatura('Ingles', 'cadetblue');
-    tarea = new Tarea();
-    tarea.dia = 3;
-    tarea.mes = 10;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea Uno';
+    tarea = new Tarea(3, 10, this.asignaturasTemplete.Ingles, 'tarea Uno');
     this.tareas.push(tarea);
 
-    tarea = new Tarea();
-    tarea.dia = 3;
-    tarea.mes = 10;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea Uno';
+    tarea = new Tarea(3, 10, this.asignaturasTemplete.Lenguaje, 'tarea Uno');
     this.tareas.push(tarea);
 
-    asign = new Asignatura('Artes Visuales', 'mediumpurple');
-    tarea = new Tarea();
-    tarea.dia = 11;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea Uno';
+    tarea = new Tarea(11, 9, this.asignaturasTemplete.ArtesVisuales, 'tarea Uno');
     this.tareas.push(tarea);
 
-    asign = new Asignatura('Musica', 'cadetblue');
-    tarea = new Tarea();
-    tarea.dia = 27;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea Uno';
+    tarea = new Tarea(27, 9, this.asignaturasTemplete.Musica, 'tarea Uno');
     this.tareas.push(tarea);
 
-    asign = new Asignatura('Historia', 'brown');
-    tarea = new Tarea();
-    tarea.dia = 7;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea Uno';
+    tarea = new Tarea(7, 9, this.asignaturasTemplete.Historia, 'tarea Uno');
     this.tareas.push(tarea);
 
-    tarea = new Tarea();
-    tarea.dia = 29;
-    tarea.mes = 9;
-    tarea.asignatura = asign;
-    tarea.actividad = 'tarea Uno';
+    tarea = new Tarea(29, 9, this.asignaturasTemplete.Historia, 'tarea Uno');
     this.tareas.push(tarea);
   }
 
@@ -185,8 +123,8 @@ export class CalendarItemComponent implements OnInit {
           let tareas = this.tareas.filter(x => x.dia == diaNumber);
 
           if (tareas.length > 0) {
-            console.log("diaNumber: " + diaNumber + " - tareas.length: " + tareas.length);
-            console.log("tareas: " + JSON.stringify(tareas));
+            //console.log("diaNumber: " + diaNumber + " - tareas.length: " + tareas.length);
+            //console.log("tareas: " + JSON.stringify(tareas));
             let actividades: Asignatura[] = [];
             for (let index = 0; index < tareas.length; index++) {
               const element = tareas[index];
@@ -195,8 +133,8 @@ export class CalendarItemComponent implements OnInit {
             let servicesLimpio: Asignatura[] = Array.from(new Set(actividades))
             //console.log({servicesLimpio})
 
-            console.log("diaNumber: " + diaNumber + " - tareas.length: " + servicesLimpio.length);
-            console.log("servicesLimpio: " + JSON.stringify(servicesLimpio));
+            //console.log("diaNumber: " + diaNumber + " - tareas.length: " + servicesLimpio.length);
+            //console.log("servicesLimpio: " + JSON.stringify(servicesLimpio));
 
             // Eliminar repetidos en actividades.
             this.semanas[dia].semana[dia0].dias[dia1].tareas = servicesLimpio;
@@ -206,37 +144,4 @@ export class CalendarItemComponent implements OnInit {
     }
   }
 
-}
-
-export interface Dia {
-  diaNumber: number;
-  diaName: string;
-  tareas?: Asignatura[];
-}
-
-export interface Semana {
-  dias: Dia[];
-}
-
-export interface Semanas {
-  semana: Semana[];
-}
-
-export interface Tarea {
-  dia: number;
-  mes: number;
-  asignatura: Asignatura;
-  actividad: string;
-}
-export class Tarea { }
-
-export interface Asignatura {
-  nombre: string;
-  color: string;
-}
-export class Asignatura {
-  constructor(nom: string, col: string) {
-    this.nombre = nom;
-    this.color = col;
-  }
 }

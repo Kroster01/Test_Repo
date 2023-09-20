@@ -1,7 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <label>seccion Codigod e colores</label>
+            <div class="row">
+                <div class="col-6" *ngFor="let asing of asignaturas, let item=index">
+                    <div [ngStyle]="{ 'padding': '10px 0px', 'display': 'flex', 'align-items': 'center' }" >
+                        <span class="dot" [ngStyle]="{'background-color': asing.color }"></span> <span class="name">{{asing.nombre }}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
