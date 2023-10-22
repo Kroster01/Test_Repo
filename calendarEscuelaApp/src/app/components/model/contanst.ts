@@ -78,13 +78,15 @@ export interface Tarea {
     mes: number;
     asignatura: Asignatura;
     actividad: string;
+    shortdesc: string;
 }
 export class Tarea {
-    constructor(dia: number, mes: number, asignatura: Asignatura, actividad: string) {
+    constructor(dia: number, mes: number, asignatura: Asignatura, actividad: string, shortdesc: string) {
         this.dia = dia;
         this.mes = mes;
         this.asignatura = asignatura;
         this.actividad = actividad;
+        this.shortdesc = shortdesc;
     }
 }
 

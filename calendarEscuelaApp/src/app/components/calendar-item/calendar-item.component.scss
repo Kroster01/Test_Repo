@@ -1,17 +1,87 @@
-.numDay {
-    padding: 0;
-    font-size: 18px;
-}
-
-.detDay {}
-
-.p0 {
-    padding: 0;
+.bcHerader {
+    border-radius: 20px;
+    background-color: #dcc7fe;
 }
 
 .box-actividad {
-    padding: 5px;
-    border: solid black 1px;
+    padding: 3px;
     color: #000000;
     font-weight: bold;
 }
+
+.table>:not(caption)>*>* {
+    background-color: transparent;
+}
+
+.borderDay {
+    margin: 5px;
+    border: 1px solid #090909;
+    padding: 0px;
+    border-radius: 20px;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+table {
+    height: 1px;
+}
+
+.divPrincipal {
+    /*margin-right: 5px;*/
+    /*margin-left: 5px;*/
+    /*border: 2px solid red;*/
+}
+
+.numDay {
+    /*padding: 0;*/
+    /*font-size: 18px;*/
+
+
+    padding: 10px;
+
+}
+
+.detDay {
+    padding-bottom: 10px;
+}
+
+.detDay .box-actividad:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.detDay .box-actividad:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+table,
+th,
+td {
+    /*border: 2px solid green;*/
+    /*border-spacing: 20px;*/
+}
+
+td {
+    /*padding: 10px;*/
+}
+
+/*
+th {
+    padding: 20px;
+}
+*/
+.borderr {
+    padding: 10px;
+}
+
+/*
+td {
+    padding: 5px;
+}*/

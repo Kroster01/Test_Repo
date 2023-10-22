@@ -9,6 +9,8 @@ import { Dia, Asignatura, Semana, Semanas, Tarea } from '../model/contanst';
 export class CalendarItemComponent implements OnInit {
 
   @Input() tareas!: Tarea[];
+  @Input() aanio!: number;
+  @Input() mes!: number;
   semanas: Semanas[] = [];
   semana: Semana[] = [];
   diasSemana: string[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -17,12 +19,9 @@ export class CalendarItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let fecha = new Date();
-    let ames: number = fecha.getMonth() + 1;
-    let aanio: number = fecha.getFullYear();
-    var diasMes: number = new Date(aanio, ames, 0).getDate();
-    let listDia: Dia[] = this.llenarVaciosPrevios(ames, aanio);
-    this.llenarCalendario(diasMes, ames, aanio, listDia);
+    var diasMes: number = new Date(this.aanio, this.mes, 0).getDate();
+    let listDia: Dia[] = this.llenarVaciosPrevios(this.mes, this.aanio);
+    this.llenarCalendario(diasMes, this.mes, this.aanio, listDia);
     this.llenarVaciosPosterior();
     this.findtareas();
     console.log(`fin proceso  `);

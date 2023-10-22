@@ -1,4 +1,51 @@
 <div class="container">
+<!--
+    aanio: {{ aanio }} <br/>
+    mes: {{ mes }} <br/>
+-->
+    <table class="table table-hover w100">
+        <thead>
+            <tr class="bcHerader">
+                <th scope="col" style="width: 20%;">
+                    <div>Lunes</div>
+                </th>
+                <th scope="col" style="width: 20%;">
+                    <div>Martes</div>
+                </th>
+                <th scope="col" style="width: 20%;">
+                    <div>Miércoles</div>
+                </th>
+                <th scope="col" style="width: 20%;">
+                    <div>Jueves</div>
+                </th>
+                <th scope="col" style="width: 20%;">
+                    <div>Viernes</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let semana of semanas, let item=index">
+                <ng-container *ngFor="let semana of semana.semana, let item2=index">
+                    <td scope="row" *ngFor="let dia of semana.dias, let item3=index">
+                        <div class="borderDay full-height" *ngIf="dia.diaNumber != -1 && item3 != 5 && item3 != 6">
+                            <div class="divPrincipal" *ngIf="dia.diaNumber != -1">
+                                <div class="numDay"><span>{{dia.diaName}}</span></div>
+                                <div class="detDay">
+                                    <div [ngClass]="" class="box-actividad"
+                                        [ngStyle]="{'background-color': terea.color}"
+                                        *ngFor="let terea of dia.tareas, let item2=index">
+                                        {{terea.nombre }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </td>
+                </ng-container>
+            </tr>
+        </tbody>
+    </table>
+    <!--
     <table class="table table-hover">
         <thead>
             <tr>
@@ -15,8 +62,8 @@
             <tr *ngFor="let semana of semanas, let item=index">
                 <ng-container *ngFor="let semana of semana.semana, let item2=index">
                     <td scope="row" *ngFor="let dia of semana.dias, let item2=index">
-                        <div class="p0" *ngIf="dia.diaNumber != -1">
-                            <div class="mb-3" style="margin: 8px;border: 4px solid black;border-radius: 10px;">
+                        <div class="p0" *ngIf="dia.diaNumber != -1" style="border: solid;border-radius: 9px;">
+                            <div class="mb-3">
                                 <div class="numDay"><span style="padding-left: 7px;">{{dia.diaName}}</span></div>
                                 <div class="detDay">
                                     <div [ngClass]="" class="box-actividad"
@@ -32,4 +79,5 @@
             </tr>
         </tbody>
     </table>
+-->
 </div>

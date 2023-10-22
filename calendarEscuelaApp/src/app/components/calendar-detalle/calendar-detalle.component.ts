@@ -30,7 +30,6 @@ export class CalendarDetalleComponent implements OnInit {
       }
       tareas = [];
     });
-    console.log('sdsd');
   }
 
   private agruparAsignaturasPorTareas(nombreAsignatura: string): Tarea[] {
